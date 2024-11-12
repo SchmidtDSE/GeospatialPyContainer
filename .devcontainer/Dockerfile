@@ -10,9 +10,6 @@ COPY .devcontainer/scripts .devcontainer/scripts
 # Install git and ssh (note that you could also put this in a .sh for better readability)
 RUN .devcontainer/scripts/install_git_and_ssh.sh
 
-# Install Netlogo
-RUN .devcontainer/scripts/install_netlogo.sh
-
 # Install SyncroSim
 #RUN .devcontainer/scripts/install_sycrosim.sh
 

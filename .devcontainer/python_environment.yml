@@ -1,4 +1,4 @@
-name: netlogo
+name: SyncroSim
 channels:
   - defaults
   - conda-forge
@@ -15,4 +15,4 @@ dependencies:
   - pip
   - pip:
       - aul
-      - pynetlogo == 0.4
+
