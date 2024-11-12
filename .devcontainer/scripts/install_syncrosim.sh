@@ -9,11 +9,11 @@ dpkg-reconfigure --frontend noninteractive tzdata
 
 apt-get -y install mono-complete
 
-#chmod +x /root/SyncroSim/SyncroSim.Console.exe
+chmod +x syncrosim_linux_3_0_9/SyncroSim.Console.exe
 
-#mono /root/SyncroSim/SyncroSim.Console.exe 
+mono syncrosim_linux_3_0_9/SyncroSim.Console.exe 
 
-#mono /root/SyncroSim/SyncroSim.Console.exe --list --help
+mono syncrosim_linux_3_0_9/SyncroSim.Console.exe --list --help
 
 #Console reference
 #https://docs.syncrosim.com/reference/console.html

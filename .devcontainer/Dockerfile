@@ -7,6 +7,9 @@ ENV DEV_CONTAINER=false
 # Copy over install scripts - this is a good way to keep the Dockerfile clean and readable
 COPY .devcontainer/scripts .devcontainer/scripts
 
+# Copy Syncrosim because that's what we do
+COPY syncrosim_linux_3_0_9 syncrosim_linux_3_0_9
+
 # Install git and ssh (note that you could also put this in a .sh for better readability)
 RUN .devcontainer/scripts/install_git_and_ssh.sh
 
