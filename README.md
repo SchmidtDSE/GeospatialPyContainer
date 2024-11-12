@@ -68,3 +68,19 @@ python simulation/main.py
 ```
 
 Or, optionally, you can use the included `launch.json` configuration to debug the simulation using VSCode's debug panel - which essentially does the exact same thing, unless you add a breakpoint, which will stop the simulation at that point. This can be very helpful both for understanding the simulation code and for debugging.
+
+## Folder structure of the Docker container
+`.devcontainer` 
+	scripts *Any command line/ bash code you would use to install softwar should be put in here, so Docker will execute it when you set up the container*
+	devcontainer.json
+	Dockerfile
+	example.env *Anything that's personal and should not be on Github, e.g. passworts for loggin into APIs*
+	python_environment.yaml *Handles Pythin and package installation*
+	.vscode
+	simulation *This contains all the code, this folder was on Github*
+	.env
+	.gitignore
+	README.md
+		
+
+

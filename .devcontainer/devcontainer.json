@@ -5,7 +5,8 @@
     "context": "../"
   },
   "mounts": [
-    "source=${localEnv:HOME}/.ssh,target=/root/.ssh,type=bind" // SSH keys
+    "source=${localEnv:HOME}/.ssh,target=/root/.ssh,type=bind", // SSH keys
+    "source=${localEnv:HOME}/Desktop/DockerDeps/syncrosim-linux-3-0-9,target=/root/SyncroSim,type=bind" // SyncroSim Install file 
   ],
   "extensions": ["ms-python.flake8", "ms-python.python", "ms-python.debugpy"]
 }

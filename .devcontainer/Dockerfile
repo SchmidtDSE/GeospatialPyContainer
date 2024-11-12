@@ -13,6 +13,9 @@ RUN .devcontainer/scripts/install_git_and_ssh.sh
 # Install Netlogo
 RUN .devcontainer/scripts/install_netlogo.sh
 
+# Install SyncroSim
+#RUN .devcontainer/scripts/install_sycrosim.sh
+
 # Then, copy the .devcontainer contents of the repo into the image - note we do this later so that we can avoid re-installing sys dependencies if the python deps change
 COPY .devcontainer/python_environment.yml .devcontainer/python_environment.yml
 RUN conda env create -f .devcontainer/python_environment.yml
