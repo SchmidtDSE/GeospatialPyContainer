@@ -11,7 +11,7 @@ COPY .devcontainer/scripts .devcontainer/scripts
 RUN .devcontainer/scripts/install_git_and_ssh.sh
 
 # Install SyncroSim
-#RUN .devcontainer/scripts/install_sycrosim.sh
+RUN .devcontainer/scripts/install_syncrosim.sh
 
 # Then, copy the .devcontainer contents of the repo into the image - note we do this later so that we can avoid re-installing sys dependencies if the python deps change
 COPY .devcontainer/python_environment.yml .devcontainer/python_environment.yml
