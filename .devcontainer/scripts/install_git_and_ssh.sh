@@ -6,3 +6,4 @@ git config --global user.email "lucia.sophie.layritz@posteo.de"
 git config --global user.name "lucialayr"
 
 chmod +x .devcontainer/scripts/install_syncrosim.sh
+chmod +x simulation/run_syncrosim_scenario.sh

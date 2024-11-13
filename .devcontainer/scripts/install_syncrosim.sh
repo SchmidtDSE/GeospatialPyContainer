@@ -1,3 +1,5 @@
+#/bin/bash
+
 echo 'test'
 
 #Catch time zone questions to install noninteractively
