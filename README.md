@@ -1,86 +1,63 @@
-## Dev setup
+# SyncroSIM
 
-### Using devcontainer
+This repo aims to run the SyncroSim software in a Docker container. The goal is to run external Syncrosim libraries and scenarios from the command line.
+
+### How to set up this container
+
 
 If going the dev container route, you will need the following:
 
 - Docker (cli, but optionally the desktop app)
 - VSCode, and the `Dev Containers` extension
 
-After cloning the repo, you will need to open it in VSCode and run the following command:
+After cloning the repo, you will need to open it in VSCode (` code .` in the command line) and run the following command:
 
 - `Cmd + Shift + P -> Dev Containers: Reopen in Container`
 
-### Using local setup
+or
 
-If foregoing the dev container, you will need the following:
+- `Cmd + Shift + P -> Dev Containers: Rebuilt Container`
 
-- Conda (to create and manage the python environment and its dependencies)
-- NetLogo (version 6.1.0)
-- OpenJDK 8 (for NetLogo)
+#### Running simulations
 
-After netlogo installation, you will need to set:
+While building the Dokcer container, SyncroSim is installed an executed once, so if this is sucessful it should run in principle. Once the container is build you can execute in from the terminal using
 
-- `NETLOGO_HOME` environment variable to the path of the NetLogo installation directory.
-- `JAVA_HOME` environment variable to the path of the OpenJDK 8 installation directory.
-- `NETLOGO_VERSION` environment variable to the version of NetLogo installed, to the major version and minor (e.g. 6.1).
+` mono syncrosim_linux_3_0_9/SyncroSim.Console.exe [command][argument, argument, ...]` 
 
-VSCode is recommended for development, but not required. If using VSCode, the following extensions are recommended:
+To execute the `SagebrushSteppeRestoration` library, run
 
-- debugpy, for debugging python code and using the included `launch.json` configuration
-- `python` and `flake8` for linting and code formatting
+` ./simulation/run_syncrosim_scenario.sh` 
 
-#### Using Ubuntu 20.04 LTS
+The library is mounted from external, as it is quite large. You would need to download this and mount accordingly
 
-If using Ubuntu 20.04 LTS, you can install the required dependencies with the following included workflow (assuming you already have conda):
+- [ ] This currently does not run, because we have not installed the ST-SIM package!
 
-- `.devcontainer/scripts/install_git_and_ssh.sh` will install git and ssh
-- `.devcontainer/scripts/install_netlogo.sh` will install NetLogo and its Java dependency, as well as instantiate the relevant env vars
-- `conda install .devcontainer/python_environment.yml` will install the python dependencies. Remember to `conda init` and `conda activate netlogo` to activate the environment.
-
-#### Using Windows or MacOS
-
-If using Windows or MacOS, you will need to install the dependencies manually. The included scripts are written for Ubuntu, and will not work on Windows or MacOS. In this case, it is highly recommended to use the devcontainer, as it will handle the installation of the dependencies for you.
-
-## User Environment
-
-This repo uses a `.env` file in the root of the repo (which can be copied and modified from `.devcontainer.env`). This file is read into the simulation itself in order to set user-specific environment vars - in this case, its a toy variable with no real meaning (the name of the results csv):
-
-```
-VERY_SPECIAL_NAME_FOR_MY_RESULTS_CSV = my_special_name
-```
-
-Note that this must be done manually regardless of whether you use the dev container workflow or install locally. `.env` is ignored by git, so everyone working on the repo can have their own user environment vars that do not conflict with one another.
-
-## Simulations
-
-This toy repo relies on:
-
-- NetLogo
-- pynetlogo
-
-The example analysis (within main.py) is pulled directly from the pynetlogo documentation, with some minor modifications for simplicity.
-
-To run the simulation, you can use the following command (from a terminal with the `netlogo` environment activated):
-
-```bash
-python simulation/main.py
-```
-
-Or, optionally, you can use the included `launch.json` configuration to debug the simulation using VSCode's debug panel - which essentially does the exact same thing, unless you add a breakpoint, which will stop the simulation at that point. This can be very helpful both for understanding the simulation code and for debugging.
 
 ## Folder structure of the Docker container
-`.devcontainer` 
-	scripts *Any command line/ bash code you would use to install softwar should be put in here, so Docker will execute it when you set up the container*
-	devcontainer.json
-	Dockerfile
-	example.env *Anything that's personal and should not be on Github, e.g. passworts for loggin into APIs*
-	python_environment.yaml *Handles Pythin and package installation*
-	.vscode
-	simulation *This contains all the code, this folder was on Github*
-	.env
-	.gitignore
-	README.md
+
+
+├── **.devcontainer** &#x1F4C1;
+
+│&nbsp; &nbsp; &nbsp; &nbsp;└── scripts &#x1F4C1;  *Subsets of the raw data generated before downloading to local. Can be downloaded from [Zenodo](https://zenodo.org/records/10619524) (approx 2G of data)*
+
+│&nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;└──  `handle_startup_sh`&#x1F4C4; *?*
+
+│&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;└──  `*install_git_and_ssh.sh`&#x1F4C4; *handles, git, ssh, and executables*
+
+│&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;└──  `*install_syncrosim.sh`&#x1F4C4; 
+
+│&nbsp; &nbsp; &nbsp; &nbsp; └──  `devcontainer.json`&#x1F4C4; *mounts external folders, ...*
+
+│&nbsp; &nbsp; &nbsp; &nbsp; └──  `Dockerfile`&#x1F4C4; *mounts external folders, ...*
+
+│&nbsp; &nbsp; &nbsp; &nbsp; └──  `python_environment.yaml`&#x1F4C4; *handles installation of python and python packages*
+
+├── **simulation** &#x1F4C1;  *files for simulations within container*
+
+│&nbsp; &nbsp; &nbsp; &nbsp;└──  `*run_syncrosim_scenario.sh`&#x1F4C4; *Run a syncrosim scenario from the library *
+
+├── **syncrosim_linux_3_0_9** &#x1F4C1;  *contains the* `.exe` *and all files to run it*
+
 		
 
 
