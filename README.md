@@ -38,19 +38,21 @@ The library is mounted from external, as it is quite large. You would need to do
 
 ├── **.devcontainer** &#x1F4C1;
 
-│&nbsp; &nbsp; &nbsp; &nbsp;└── scripts &#x1F4C1;  *Subsets of the raw data generated before downloading to local. Can be downloaded from [Zenodo](https://zenodo.org/records/10619524) (approx 2G of data)*
-
-│&nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;└──  `handle_startup_sh`&#x1F4C4; *?*
-
-│&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;└──  `*install_git_and_ssh.sh`&#x1F4C4; *handles, git, ssh, and executables*
-
-│&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;└──  `*install_syncrosim.sh`&#x1F4C4; 
-
 │&nbsp; &nbsp; &nbsp; &nbsp; └──  `devcontainer.json`&#x1F4C4; *mounts external folders, ...*
 
 │&nbsp; &nbsp; &nbsp; &nbsp; └──  `Dockerfile`&#x1F4C4; *mounts external folders, ...*
 
-│&nbsp; &nbsp; &nbsp; &nbsp; └──  `python_environment.yaml`&#x1F4C4; *handles installation of python and python packages*
+│&nbsp; &nbsp; &nbsp; &nbsp; └──  `python_environment.yaml`&#x1F4C4; *handles 
+
+│&nbsp; &nbsp; &nbsp; &nbsp;└── scripts &#x1F4C1;  *scripts to be run during built*
+
+│&nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;└──  `handle_startup_sh`&#x1F4C4; *?*
+
+│&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;└──  `*install_git_and_ssh.sh`&#x1F4C4; *handles, git, ssh, and executables*
+
+│&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;└──  `*install_syncrosim.sh`&#x1F4C4; 
+
+installation of python and python packages*
 
 ├── **simulation** &#x1F4C1;  *files for simulations within container*
 
