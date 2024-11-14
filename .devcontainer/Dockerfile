@@ -20,6 +20,10 @@ RUN .devcontainer/scripts/install_syncrosim.sh
 COPY .devcontainer/python_environment.yml .devcontainer/python_environment.yml
 RUN conda env create -f .devcontainer/python_environment.yml
 
+# Handle installation of Syncrosim packages through pysyncrosim 
+#(they might already be installed, but it does not matter to install them twice)
+RUN conda run -n SyncroSim python .devcontainer/scripts/pysyncrosim_setup.py
+
 # Now, copy python source code into the image - by doing this last, we can avoid re-installing ALL dependencies if just the source code changes
 COPY simulation simulation
 
