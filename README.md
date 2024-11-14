@@ -46,11 +46,11 @@ The library is mounted from external, as it is quite large. You would need to do
 
 │&nbsp; &nbsp; &nbsp; &nbsp;└── scripts &#x1F4C1;  *scripts to be run during built*
 
-│&nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;└──  `handle_startup_sh`&#x1F4C4; *?*
+│&nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;└──  `handle_startup_sh`&#x1F4C4; *?*
 
 │&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;└──  `*install_git_and_ssh.sh`&#x1F4C4; *handles, git, ssh, and executables*
 
-│&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;└──  `*install_syncrosim.sh`&#x1F4C4; 
+│&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;└──  `*install_syncrosim.sh`&#x1F4C4; 
 
 installation of python and python packages*
 
