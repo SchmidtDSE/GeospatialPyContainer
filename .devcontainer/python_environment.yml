@@ -1,4 +1,4 @@
-name: SyncroSim
+name: GeospatialPyContainer
 channels:
   - defaults
   - conda-forge
