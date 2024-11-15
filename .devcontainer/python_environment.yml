@@ -13,5 +13,6 @@ dependencies:
   - ipykernel
   - ipython
   - jupyter
+  - matplotlib
   - pip:
 
