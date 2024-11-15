@@ -1,7 +1,8 @@
-# SyncroSIM
+# GeospatialPyContainer
 
-This repo aims to run the SyncroSim software in a Docker container. The goal is to run external Syncrosim libraries and scenarios from the command line.
-
+This repo is a basic Docker container with geospatial capapbilities for Python. More specifically it
+- install Python 3.12
+- installs key geospatial packages: `rasterio`, ` xarray`, ` rioxarray` 
 ### How to set up this container
 
 

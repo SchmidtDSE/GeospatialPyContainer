@@ -4,17 +4,14 @@ channels:
   - conda-forge
 dependencies:
   - python=3.12
-  - pandas=2.2.2
-  - numpy=2.1.0
-  - rasterio=1.3.10
-  - debugpy
-  - python-dotenv
-  - scipy
-  - JPype1
-  - SAlib
-  - importlib_metadata
+  - numpy
+  - pandas
+  - rasterio
+  - xarray
+  - rioxarray
   - pip
+  - ipykernel
+  - ipython
+  - jupyter
   - pip:
-      - aul
-      - pysyncrosim
 
