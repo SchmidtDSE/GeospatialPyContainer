@@ -19,20 +19,6 @@ or
 
 - `Cmd + Shift + P -> Dev Containers: Rebuilt Container`
 
-#### Running simulations
-
-While building the Dokcer container, SyncroSim is installed an executed once, so if this is sucessful it should run in principle. Once the container is build you can execute in from the terminal using
-
-` mono syncrosim_linux_3_0_9/SyncroSim.Console.exe [command][argument, argument, ...]` 
-
-To execute the `SagebrushSteppeRestoration` library, run
-
-` ./simulation/run_syncrosim_scenario.sh` 
-
-The library is mounted from external, as it is quite large. You would need to download this and mount accordingly
-
-- [ ] This currently does not run, because we have not installed the ST-SIM package!
-
 
 ## Folder structure of the Docker container
 
@@ -51,15 +37,14 @@ The library is mounted from external, as it is quite large. You would need to do
 
 │&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;└──  `*install_git_and_ssh.sh`&#x1F4C4; *handles, git, ssh, and executables*
 
-│&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;└──  `*install_syncrosim.sh`&#x1F4C4; 
 
 installation of python and python packages*
 
 ├── **simulation** &#x1F4C1;  *files for simulations within container*
 
-│&nbsp; &nbsp; &nbsp; &nbsp;└──  `*run_syncrosim_scenario.sh`&#x1F4C4; *Run a syncrosim scenario from the library *
+│&nbsp; &nbsp; &nbsp; &nbsp;└──  `*.py`&#x1F4C4; *Runs python files. Conda environment of yaml file needs to be activated and script run in terminal with conda*
 
-├── **syncrosim_linux_3_0_9** &#x1F4C1;  *contains the* `.exe` *and all files to run it*
+
 
 		
 
