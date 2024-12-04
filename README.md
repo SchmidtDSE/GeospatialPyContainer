@@ -19,9 +19,12 @@ or
 
 - `Cmd + Shift + P -> Dev Containers: Rebuilt Container`
 
+## How to start a Jupter Notebook
+
+- Activate the correct Python environment `conda activate GeospatialPyContainer`
+- Start notebook with `jupyter notebook --allow-root --NotebookApp.token=''`
 
 ## Folder structure of the Docker container
-
 
 ├── **.devcontainer** &#x1F4C1;
 
