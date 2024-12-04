@@ -3,8 +3,8 @@
 This repo is a basic Docker container with geospatial capapbilities for Python. More specifically it
 - install Python 3.12
 - installs key geospatial packages: `rasterio`, ` xarray`, ` rioxarray` 
-### How to set up this container
 
+### How to set up this container
 
 If going the dev container route, you will need the following:
 
@@ -19,6 +19,10 @@ or
 
 - `Cmd + Shift + P -> Dev Containers: Rebuilt Container`
 
+## How to start a Jupter Notebook
+
+- Activate the correct Python environment `conda activate GeospatialPyContainer`
+- Start notebook with `jupyter notebook --allow-root --NotebookApp.token=''`
 
 ## Folder structure of the Docker container
 
