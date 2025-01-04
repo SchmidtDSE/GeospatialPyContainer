@@ -13,5 +13,10 @@ dependencies:
   - ipykernel
   - ipython
   - jupyter
+  - matplotlib
+  - geopandas
+  - shapely
+  - folium
+  - mapclassify
   - pip:
 
